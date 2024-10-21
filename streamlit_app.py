@@ -5,6 +5,7 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 # Source: https://github.com/CaliberAI/streamlit-nlg-gpt-2/blob/main/app.py
 # Source: Major part of the code inspired from this https://www.reddit.com/r/learnmachinelearning/comments/k1i7p5/streamlit_ai_text_generation_web_app_with_gpt2/
+# Source: https://discuss.streamlit.io/t/putting-a-gpt-2-model-up-for-others-to-interact-with/9986
 
 model_name = "gpt2"
 model = GPT2LMHeadModel.from_pretrained(model_name)
@@ -35,7 +36,7 @@ def generate_text(prompt, num_tokens, temperature):
     
     return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-if st.button("Generate"):
+if st.button("Enter"):
     if prompt:
         # Generate more predictable text
         predictable_text = generate_text(prompt, num_tokens, temperature=0.2)
