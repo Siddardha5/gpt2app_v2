@@ -18,8 +18,9 @@ st.title("GPT-2 Text Generator")
 prompt = st.text_input("Enter your prompt:")
 num_tokens = st.number_input("Number of tokens to generate:", min_value=1, max_value=100, value=20)
 
-#Source: https://docs.streamlit.io/develop/api-reference/widgets/st.slider
-#creativity = st.slider("Creativity level:", min_value=0.0, max_value=1.0, value=0.7, step=0.1)
+
+# Source: https://huggingface.co/docs/transformers/en/generation_strategies
+# Source: https://medium.com/@ruslanmv/generative-ai-for-text-generation-from-scratch-25db8d6cd335
 
 def generate_text(prompt, num_tokens, temperature):
     inputs = tokenizer.encode(prompt, return_tensors="pt")
