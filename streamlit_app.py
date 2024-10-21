@@ -4,7 +4,7 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 
 # Source: https://github.com/CaliberAI/streamlit-nlg-gpt-2/blob/main/app.py
-#https://docs.streamlit.io/develop/api-reference/widgets/st.slider
+
 
 model_name = "gpt2"
 model = GPT2LMHeadModel.from_pretrained(model_name)
@@ -16,6 +16,9 @@ st.title("GPT-2 Text Generator")
 
 prompt = st.text_input("Enter your prompt:")
 num_tokens = st.number_input("Number of tokens to generate:", min_value=1, max_value=100, value=20)
+
+#Source: https://docs.streamlit.io/develop/api-reference/widgets/st.slider
+creativity = st.slider("Creativity level:", min_value=0.0, max_value=1.0, value=0.7, step=0.1)
 
 def generate_text(prompt, num_tokens, temperature):
     inputs = tokenizer.encode(prompt, return_tensors="pt")
