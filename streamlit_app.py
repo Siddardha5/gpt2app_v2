@@ -20,9 +20,8 @@ num_tokens = st.number_input("Number of tokens to generate:", min_value=1, max_v
 def generate_text(prompt, num_tokens, temperature):
     inputs = tokenizer.encode(prompt, return_tensors="pt")
     
-    # Set seed for reproducibility
-    set_seed(42)
-    
+# Source: https://github.com/huggingface/transformers/issues/22405
+   
     outputs = model.generate(
         inputs, 
         max_length=num_tokens + len(inputs[0]),
