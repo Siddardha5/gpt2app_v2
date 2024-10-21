@@ -17,8 +17,6 @@ st.title("GPT-2 Text Generator")
 prompt = st.text_input("Enter your prompt:")
 num_tokens = st.number_input("Number of tokens to generate:", min_value=1, max_value=100, value=20)
 
-creativity = st.slider("Creativity level:", min_value=0.0, max_value=1.0, value=0.7, step=0.1)
-
 def generate_text(prompt, num_tokens, temperature):
     inputs = tokenizer.encode(prompt, return_tensors="pt")
     
