@@ -44,8 +44,9 @@ if st.button("Enter"):
         st.write(predictable_text)
 
         # creative text
-        creative_text = generate_text(prompt, num_tokens, temperature=creativity)
-        st.subheader(f"Creative Output (Temperature: {creativity}):")
+        creative_text = generate_text(prompt, num_tokens, temperature=0.7)
+        st.subheader("Creative Output:")
         st.write(creative_text)
+
     else:
         st.warning("Please enter a prompt.")
