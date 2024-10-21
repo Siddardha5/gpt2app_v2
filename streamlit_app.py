@@ -4,7 +4,7 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 
 # Source: https://github.com/CaliberAI/streamlit-nlg-gpt-2/blob/main/app.py
-
+# Source: Major part of the code inspired from this https://www.reddit.com/r/learnmachinelearning/comments/k1i7p5/streamlit_ai_text_generation_web_app_with_gpt2/
 
 model_name = "gpt2"
 model = GPT2LMHeadModel.from_pretrained(model_name)
