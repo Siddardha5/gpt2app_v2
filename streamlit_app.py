@@ -45,15 +45,3 @@ if st.button("Generate"):
         st.write(creative_text)
     else:
         st.warning("Please enter a prompt.")
-
-# Instructions for testing
-st.markdown("""
-### How to test the creativity feature:
-1. Enter a prompt and set the number of tokens.
-2. Adjust the "Creativity level" slider.
-3. Click "Generate" multiple times with different creativity levels.
-4. Compare the outputs:
-   - Lower values (closer to 0) will produce more predictable, consistent results.
-   - Higher values (closer to 1) will produce more diverse, creative results.
-5. Try extreme values (0.1 and 1.0) to see the difference clearly.
-""")
