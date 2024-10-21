@@ -19,7 +19,7 @@ prompt = st.text_input("Enter your prompt:")
 num_tokens = st.number_input("Number of tokens to generate:", min_value=1, max_value=100, value=20)
 
 #Source: https://docs.streamlit.io/develop/api-reference/widgets/st.slider
-creativity = st.slider("Creativity level:", min_value=0.0, max_value=1.0, value=0.7, step=0.1)
+#creativity = st.slider("Creativity level:", min_value=0.0, max_value=1.0, value=0.7, step=0.1)
 
 def generate_text(prompt, num_tokens, temperature):
     inputs = tokenizer.encode(prompt, return_tensors="pt")
@@ -38,14 +38,14 @@ def generate_text(prompt, num_tokens, temperature):
 
 if st.button("Enter"):
     if prompt:
-        # Generate more predictable text
+        # predictable text
         predictable_text = generate_text(prompt, num_tokens, temperature=0.2)
-        st.subheader("More Predictable Output:")
+        st.subheader("Predictable Output:")
         st.write(predictable_text)
 
-        # Generate more creative text
+        # creative text
         creative_text = generate_text(prompt, num_tokens, temperature=creativity)
-        st.subheader(f"More Creative Output (Temperature: {creativity}):")
+        st.subheader(f"Creative Output (Temperature: {creativity}):")
         st.write(creative_text)
     else:
         st.warning("Please enter a prompt.")
